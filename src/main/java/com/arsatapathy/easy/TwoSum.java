@@ -1,22 +1,27 @@
 package com.arsatapathy.easy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
-        int[] result = new int[2];
 
-        for (int i = 0; i < nums.length; i++) {
+        Map<Integer, Integer> memo = new HashMap<>();
 
-            for (int j = 0; j < nums.length; j++) {
-                if ((i != j) && (nums[i] + nums[j]) == target)  {
-                    result[0] = Math.min(i, j);
-                    result[1] = Math.max(i, j);
-
-                    return result;
-                }
-            }
+        for (int i =0; i < nums.length; i++) {
+            memo.put(nums[i], i);
         }
 
-        return result;
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+
+            if (memo.containsKey(complement) && memo.get(complement) != i) {
+                return new int[] {i, memo.get(complement)};
+            }
+
+        }
+
+        return null;
     }
 
 }
