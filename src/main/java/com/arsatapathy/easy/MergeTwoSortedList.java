@@ -79,20 +79,6 @@ class MyList {
         }
     }
 
-    public void traverse(ListNode head) {
-        if (head == null)
-            return;
-        else {
-            ListNode current = head;
-
-            while (current != null) {
-                System.out.print(current.val + " ");
-                current = current.next;
-            }
-        }
-    }
-
-
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
         if (list1 == null && list2 == null) {
