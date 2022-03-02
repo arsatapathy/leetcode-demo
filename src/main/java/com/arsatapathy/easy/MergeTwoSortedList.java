@@ -27,6 +27,14 @@ public class MergeTwoSortedList {
         System.out.println();
 
         System.out.println(list1.mergeTwoLists(list1.getHead(), list2.getHead()));
+
+        System.out.println();
+
+        list1.print();
+
+        System.out.println();
+
+        list2.print();
     }
 }
 
